@@ -120,3 +120,20 @@ Open your browser and go to:
 
 
 You should see the Boundless broker UI showing your prover’s status.
+
+Other commands:
+```bash
+# check errors
+cat /var/log/supervisor/broker_error.log
+
+# check broker logs
+tail -f /var/log/supervisor/broker.log
+
+# check service status
+supervisorctl status
+
+# restart all services then check status again
+supervisorctl restart all
+supervisorctl status
+```
+
