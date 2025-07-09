@@ -17,6 +17,8 @@ Before you begin, make sure you have:
 > \[!WARNING]
 > Make sure your USDC, wallet, and RPC endpoint are all on the **same network**
 
+If you don't know what any of this means, please read the [Account Setup Guide](./ACCOUNT.md) first.
+
 ### Supported Networks
 
 | Network          | `NETWORK` Value |
@@ -38,6 +40,8 @@ Before you begin, make sure you have:
    ![Clone Template](https://github.com/user-attachments/assets/3c9aa89e-33e2-4b92-a92e-d2e15ea09679)
 
 3. In the Docker settings, paste the following:
+
+   > **⚠️ IMPORTANT:** Replace the placeholder values below with your actual values from the prerequisites step:
 
    ```bash
    -e PRIVATE_KEY=your_private_key_here \
