@@ -35,20 +35,20 @@ If you don't know what any of this means, please read the [Account Setup Guide](
 
 1. Go to [QuickPod Templates](https://console.quickpod.io/templates)
 
-2. Find the **`Boundless Prover`** template. Click **Clone**, then give it a name you like (e.g. `Boundless Prover Personal`).
+2. Click **Create New Template** to create a new template from scratch.
 
-   ![Clone Template](https://github.com/user-attachments/assets/3c9aa89e-33e2-4b92-a92e-d2e15ea09679)
+3. Fill in the template details:
+   - **Template Type**: Select `GPU`
+   - **Template Name**: Give it a name you like (e.g. `Boundless Prover`)
+   - **Docker Image Path**: `quickpod/boundless-prover:latest`
+   - **Disk Space**: Set to at least `50` GB
 
-3. In the Docker settings, paste the following:
+4. In the **Docker Options** field, paste the following:
 
 > [!WARNING]
 > Replace the placeholder values below with your actual values from the prerequisites step:
    ```bash
-   -e PRIVATE_KEY=your_private_key_here \
-   -e RPC_URL=https://eth-sepolia.g.alchemy.com/v2/your-api-key-here \
-   -e NETWORK=eth-sepolia \
-   -p 8082:8082 \
-   --shm-size=30g
+   -e PRIVATE_KEY=your_private_key_here -e RPC_URL=https://eth-sepolia.g.alchemy.com/v2/your-api-key-here -e NETWORK=eth-sepolia -p 8082:8082 --shm-size=30g
    ```
 
    | Placeholder | Replace With |
@@ -60,8 +60,6 @@ If you don't know what any of this means, please read the [Account Setup Guide](
    Then hit **Save**.
 
    ![Docker Settings](https://github.com/user-attachments/assets/5d72d55e-b7c5-4fda-a976-7f3bcc6c59b7)
-
-4. Under **Disk Space**, set it to at least `50` GB.
 
 5. Launch a machine using your new template.
 
