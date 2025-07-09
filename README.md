@@ -35,33 +35,23 @@ If you don't know what any of this means, please read the [Account Setup Guide](
 
 1. Go to [QuickPod Templates](https://console.quickpod.io/templates)
 
-2. Click **Create New Template** to create a new template from scratch.
+2. Search for `boundless` and `Clone` the template
+   ![image](https://github.com/user-attachments/assets/d5c18a81-2580-4ebf-b54e-083d217b9881)
 
-3. Fill in the template details:
-   - **Template Type**: Select `GPU`
-   - **Template Name**: Give it a name you like (e.g. `Boundless Prover`)
-   - **Docker Image Path**: `ghcr.io/quickpod/boundless:latest`
-   - **Disk Space**: Set to at least `50` GB
-
-  ![image](https://github.com/user-attachments/assets/1286c59c-a7c9-41e9-b198-015ebfed337a)
-
-4. In the **Docker Options** field, paste the following:
+4. In the **Docker Options** edit the following
 
 > [!WARNING]
 > Replace the placeholder values below with your actual values from the prerequisites step:
-   ```bash
-   -e PRIVATE_KEY=your_private_key_here -e RPC_URL=https://eth-sepolia.g.alchemy.com/v2/your-api-key-here -e NETWORK=eth-sepolia -p 8082:8082 --shm-size=30g
-   ```
 
    | Placeholder | Replace With |
    | ----------- | ------------ |
-   | `your_private_key_here` | Your actual wallet private key |
-   | `your-api-key-here` | Your actual Alchemy API key from the RPC URL |
+   | `YOUR_PRIVATE_KEY_GOES_HERE` | Your actual wallet private key |
+   | `YOUR_RPC_URL_HERE` | Your actual  RPC URL |
    | `eth-sepolia` | Your chosen network value (see supported networks table above) |
 
    Then hit **Save**.
 
-   ![image](https://github.com/user-attachments/assets/71382587-32e5-447c-bba2-826a8b40fd59)
+   ![image](https://github.com/user-attachments/assets/33231092-f36c-45b6-9c26-09a59e89dc7a)
 
 5. Launch a machine using your new template.
 
