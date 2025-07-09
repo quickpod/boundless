@@ -2,12 +2,12 @@
 
 This guide walks you through everything you need to prepare for testing USDC transfers on the Sepolia network—setting up a wallet, getting Sepolia ETH and USDC, and configuring your RPC endpoint.
 
-> **ℹ️ Note:** If you're following the **Boundless Prover Quick Start**, you can skip staking here and refer to **Step 2** in the main guide when you're ready.
+> [!NOTE]
+> If you're following the **Boundless Prover Quick Start**, you can skip staking here and refer to **Step 2** in the main guide when you're ready.
 
-> \[!INFO]
+> [!NOTE]
 > **Mainnet support is also available.** You can run the prover on Ethereum or Base Mainnet as well—just note that you’ll need **real USDC** (not test tokens) and actual ETH for gas.
 
----
 
 ## 1. Register for Alchemy & Get an RPC URL
 
@@ -22,7 +22,6 @@ This guide walks you through everything you need to prepare for testing USDC tra
     `https://eth-sepolia.g.alchemy.com/v2/your-api-key`
 * **Copy** this RPC URL—you’ll need it later to connect to your chosen network.
 
----
 
 ## 2. Create a Wallet & Get Your Private Key
 
@@ -39,13 +38,12 @@ This guide walks you through everything you need to prepare for testing USDC tra
   * [web3.js](https://web3js.readthedocs.io/)
   * [Ethereum Private Key Generator](https://github.com/Ethereum-private-key-generator)
 
-> ⚠️ **Security Tip:** Never share your private key. Store it offline or in a secure password manager.
-
----
+> [!WARNING]
+> Never share your private key. Store it offline or in a secure password manager.
 
 ## 3. Add the Network to MetaMask
 
-In MetaMask, go to **Settings → Networks → Add Network** and enter:
+In MetaMask, go to **Settings → Networks → Add Network** and choose:
 
 ### For Sepolia (Testnet)
 
@@ -67,7 +65,6 @@ In MetaMask, go to **Settings → Networks → Add Network** and enter:
 | Currency Symbol    | `ETH`                         |
 | Block Explorer URL | etherscan.io or basescan.org  |
 
----
 
 ## 4. Get Sepolia ETH from a Faucet
 
@@ -82,9 +79,8 @@ In MetaMask, go to **Settings → Networks → Add Network** and enter:
   * [QuickNode](https://faucet.quicknode.com/)
   * [sepoliafaucet.com](https://sepoliafaucet.com)
 
-> ⚠️ Some faucets may require at least **0.001 ETH on mainnet** to verify your wallet.
-
----
+> [!WARNING]
+> Some faucets may require at least **0.001 ETH (real ETH) on mainnet** to verify your wallet.
 
 ## 5. Get Sepolia USDC (10 USDC)
 
@@ -98,9 +94,8 @@ In MetaMask, go to **Settings → Networks → Add Network** and enter:
   * [thirdweb faucet](https://thirdweb.com/faucet) may also provide USDC on EVM-compatible testnets
   * Alternatively, deploy your own USDC mock contract if needed for advanced testing
 
-> ⚠️ **If you're using Mainnet**, you must acquire **real USDC** (e.g., from Coinbase or a DEX). Testnet faucets will not work on mainnet.
-
----
+> [!WARNING]
+> **If you're using Mainnet**, you must acquire **real USDC** (e.g., from Coinbase or a DEX). Testnet faucets will not work on mainnet.
 
 ## 6. (Optional) Testnet Staking
 
@@ -114,9 +109,8 @@ In MetaMask, go to **Settings → Networks → Add Network** and enter:
 
 Some faucets (like QuickNode) require your wallet to hold a tiny amount of **Ethereum Mainnet ETH** to prove it's not a bot. If needed, transfer or buy 0.001 ETH to meet this requirement.
 
----
 
-## 🧾 Summary Table
+## Summary Table
 
 | Step             | What to Do                                          | Notes                           |
 | ---------------- | --------------------------------------------------- | ------------------------------- |
@@ -128,12 +122,5 @@ Some faucets (like QuickNode) require your wallet to hold a tiny amount of **Eth
 | Use Mainnet USDC | Acquire real USDC for production                    | Faucets do not work for mainnet |
 | Staking          | Not needed unless using Boundless Prover or similar | Covered in separate guide       |
 
----
-
-## Security Reminder
-
-Never share your private key. Only use reputable faucet URLs, and always double-check domains before entering wallet information.
-
----
 
 You’re now fully equipped to test (or deploy) USDC transfers on Sepolia or Mainnet. When ready, continue to the [Boundless Prover guide](./README.md) to launch your node.
