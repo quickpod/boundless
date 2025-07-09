@@ -77,6 +77,15 @@ Once your pod is running:
    ```
 
 You should see a message confirming the stake was successful.
+![stake](https://github.com/user-attachments/assets/38567b4a-2339-44eb-9458-919188224a33)
+
+Also visit
+
+For test net: https://explorer.testnet.beboundless.xyz/balances
+For main net : https://explorer.beboundless.xyz/balances
+
+![image](https://github.com/user-attachments/assets/05772bf4-f214-484e-99c9-b2375aa220df)
+
 
 ---
 
