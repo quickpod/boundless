@@ -43,7 +43,6 @@ If you don't know what any of this means, please read the [Account Setup Guide](
 
 > [!WARNING]
 > Replace the placeholder values below with your actual values from the prerequisites step:
-
    ```bash
    -e PRIVATE_KEY=your_private_key_here \
    -e RPC_URL=https://eth-sepolia.g.alchemy.com/v2/your-api-key-here \
@@ -51,6 +50,12 @@ If you don't know what any of this means, please read the [Account Setup Guide](
    -p 8082:8082 \
    --shm-size=30g
    ```
+
+   | Placeholder | Replace With |
+   | ----------- | ------------ |
+   | `your_private_key_here` | Your actual wallet private key |
+   | `your-api-key-here` | Your actual Alchemy API key from the RPC URL |
+   | `eth-sepolia` | Your chosen network value (see supported networks table above) |
 
    Then hit **Save**.
 
