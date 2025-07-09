@@ -43,6 +43,8 @@ If you don't know what any of this means, please read the [Account Setup Guide](
    - **Docker Image Path**: `quickpod/boundless-prover:latest`
    - **Disk Space**: Set to at least `50` GB
 
+  ![image](https://github.com/user-attachments/assets/bcd613ef-a054-4491-b8e9-ee2ccdd49c23)
+
 4. In the **Docker Options** field, paste the following:
 
 > [!WARNING]
@@ -59,11 +61,11 @@ If you don't know what any of this means, please read the [Account Setup Guide](
 
    Then hit **Save**.
 
-   ![Docker Settings](https://github.com/user-attachments/assets/5d72d55e-b7c5-4fda-a976-7f3bcc6c59b7)
+   ![image](https://github.com/user-attachments/assets/184c95db-c494-4b73-be87-9562d56abdc6)
 
 5. Launch a machine using your new template.
 
-   ![Select Template](https://github.com/user-attachments/assets/31ab3b50-1908-4425-b660-7072eb936b64)
+![image](https://github.com/user-attachments/assets/95bf6229-d841-4bb3-914b-6e5c9b40e6c7)
 
 ## Step 2: Stake 10 USDC
 
