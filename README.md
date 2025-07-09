@@ -14,11 +14,6 @@ Before you begin, make sure you have:
   `5f6a2b8790ac134d47fe28bcad6150eb7f426b8d60a743dc5b0940fbea29c6d1`
 * A **NETWORK** value that matches the network you're using (see below)
 
-> \[!WARNING]
-> Make sure your USDC, wallet, and RPC endpoint are all on the **same network**
-
-If you don't know what any of this means, please read the [Account Setup Guide](./ACCOUNT.md) first.
-
 ### Supported Networks
 
 | Network          | `NETWORK` Value |
@@ -26,6 +21,11 @@ If you don't know what any of this means, please read the [Account Setup Guide](
 | Base Mainnet     | `base`          |
 | Base Sepolia     | `base-sepolia`  |
 | Ethereum Sepolia | `eth-sepolia`   |
+
+> [!WARNING]
+> Make sure your USDC, wallet, and RPC endpoint are all on the **same network**
+
+If you don't know what any of this means, please read the [Account Setup Guide](./ACCOUNT.md) first.
 
 ---
 
@@ -41,7 +41,8 @@ If you don't know what any of this means, please read the [Account Setup Guide](
 
 3. In the Docker settings, paste the following:
 
-   > **⚠️ IMPORTANT:** Replace the placeholder values below with your actual values from the prerequisites step:
+> [!WARNING]
+> Replace the placeholder values below with your actual values from the prerequisites step:
 
    ```bash
    -e PRIVATE_KEY=your_private_key_here \
@@ -61,11 +62,10 @@ If you don't know what any of this means, please read the [Account Setup Guide](
 
    ![Select Template](https://github.com/user-attachments/assets/31ab3b50-1908-4425-b660-7072eb936b64)
 
----
-
 ## Step 2: Stake 10 USDC
 
-> 🟡 *You can skip this step if you’ve already staked from this wallet.*
+> [!NOTE]
+> *You can skip this step if you’ve already staked from this wallet.*
 
 Once your pod is running:
 
@@ -79,19 +79,21 @@ Once your pod is running:
 You should see a message confirming the stake was successful.
 ![stake](https://github.com/user-attachments/assets/38567b4a-2339-44eb-9458-919188224a33)
 
-Also visit
+### Verify Your Stake
 
-For test net: https://explorer.testnet.beboundless.xyz/balances
-For main net : https://explorer.beboundless.xyz/balances
+You can verify your stake by visiting the appropriate explorer:
+
+| Network Type | Explorer URL |
+| ------------ | ------------ |
+| **Testnet** | https://explorer.testnet.beboundless.xyz/balances |
+| **Mainnet** | https://explorer.beboundless.xyz/balances |
 
 ![image](https://github.com/user-attachments/assets/05772bf4-f214-484e-99c9-b2375aa220df)
 
-
----
-
 ## Step 3: Restart the Services
 
-> 🟡 *Skip this if services are already running from a previous stake.*
+> [!NOTE]
+> *Skip this if services are already running from a previous stake.*
 
 After staking, restart the services:
 
@@ -101,9 +103,7 @@ supervisorctl restart all
 
 This ensures the prover loads with the updated state.
 
----
-
-## Step 4: Check the Dashboard
+## Step 4: Check the Broker Logs
 
 Open your browser and go to:
 
