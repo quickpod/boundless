@@ -1,6 +1,5 @@
 # 🐝 Quick Start: Boundless Prover on QuickPod
-**Last updated:** July 9, 2025
-
+**Last updated:** July 11, 2025
 ---
 
 ## What You’ll Need
@@ -108,22 +107,114 @@ Open your browser and go to:
 
 ![image](https://github.com/user-attachments/assets/344a68fb-2e32-484c-8cee-39dc17c42989)
 
-
 You should see the Boundless broker UI showing your prover’s status.
 
-Other commands:
-```bash
-# check errors
-cat /var/log/supervisor/broker_error.log
+## FAQ
 
-# check broker logs
-tail -f /var/log/supervisor/broker.log
+1. **Where is the `docker-compose.yml` file?**
+   This setup does **not** use Docker or `docker-compose`.
+   Instead, services are managed using **Supervisor**.
+   You can configure which services run by editing:
 
-# check service status
-supervisorctl status
+   ```
+   /app/supervisord.conf
+   ```
 
-# restart all services then check status again
-supervisorctl restart all
-supervisorctl status
+   After making changes, restart all services with:
+
+   ```bash
+   supervisorctl restart all
+   ```
+
+2. **How do I restart a specific service (like the broker)?**
+   Use this command format:
+
+   ```bash
+   supervisorctl restart <service-name>
+   ```
+
+   For example, to restart the broker service:
+
+   ```bash
+   supervisorctl restart broker
+   ```
+
+3. **Where can I edit the `broker.toml` configuration?**
+   The file is located at:
+
+   ```
+   /app/broker.toml
+   ```
+
+   You can edit it using a text editor:
+
+   * With **nano** (beginner-friendly):
+
+     ```bash
+     nano /app/broker.toml
+     ```
+   * Or with **vi** (more advanced):
+
+     ```bash
+     vi /app/broker.toml
+     ```
+
+4. **How can I check logs?**
+   Logs for all services are in:
+
+   ```
+   /app/logs
+   ```
+
+   You can view them using:
+
+   * To view the full log:
+
+     ```bash
+     cat /app/logs/<filename>.log
+     ```
+   * To scroll through:
+
+     ```bash
+     less /app/logs/<filename>.log
+     ```
+   * To follow logs in real time:
+
+     ```bash
+     tail -f /app/logs/<filename>.log
+     ```
+
+5. **How do I increase the number of `exec_agents`?**
+   You can add the following option when starting the container:
+
+   ```bash
+   -e AGENTS=<number>
+   ```
+
+   By default, it runs with 2 agents. For example, to run 4 agents:
+
+   ```bash
+   -e AGENTS=4 ...
+   ```
+
+6. **How do I update CPU or memory limits?**
+   Currently, there is **no built-in way to limit resource usage**.
+   All processes will share the available CPU and memory of the container.
+
+7. **What settings should I use for my GPU?**
+Update your docker options with the proper segement size based on the table below:
 ```
+-e SEGMENT_SIZE=16
+```
+
+| GPU Memory | Recommended Segment Size | Memory Used | Cycles | Performance | Common GPU Models |
+|------------|-------------------------|-------------|---------|-------------|-------------------|
+| 1-2GB      | **16**                  | ~512MB      | 65K     | Basic       | GTX 1050, RTX 3050 (4GB) |
+| 2-4GB      | **17**                  | ~1GB        | 131K    | Good        | GTX 1060, RTX 3060 Ti |
+| 4-6GB      | **18**                  | ~2GB        | 262K    | Better      | GTX 1070, RTX 3060 |
+| 6-8GB      | **19**                  | ~4GB        | 524K    | Great       | GTX 1080, RTX 3070 |
+| 8-12GB     | **20**                  | ~6GB        | 1M      | Excellent   | RTX 3080, RTX 4070 |
+| 12GB+      | **21** (default)        | ~7GB        | 2M      | Maximum     | RTX 3080 Ti, RTX 4080, RTX 4090 |
+| 16GB+      | **22**                  | ~12GB       | 4M      | Overkill    | RTX 4090, A100 |
+| 24GB+      | **23**                  | ~20GB       | 8M      | Enterprise  | RTX 6000, A100 |
 
