@@ -214,7 +214,7 @@ Update your docker options with the proper segement size based on the table belo
 | 4-6GB      | **18**                  | ~2GB        | 262K    | Better      | GTX 1070, RTX 3060 |
 | 6-8GB      | **19**                  | ~4GB        | 524K    | Great       | GTX 1080, RTX 3070 |
 | 8-12GB     | **20**                  | ~6GB        | 1M      | Excellent   | RTX 3080, RTX 4070 |
-| 12GB+      | **21** (default)        | ~7GB        | 2M      | Maximum     | RTX 3080 Ti, RTX 4080, RTX 4090 |
-| 16GB+      | **22**                  | ~12GB       | 4M      | Overkill    | RTX 4090, A100 |
+| 12GB+      | **21** (default)        | ~7GB        | 2M      | Maximum     | RTX 3080 Ti, RTX 3090, RTX 4080, RTX 4090 |
+| 16GB+      | **22**                  | ~12GB       | 4M      | Overkill    | RTX 3090, 4090, A100 |
 | 24GB+      | **23**                  | ~20GB       | 8M      | Enterprise  | RTX 6000, A100 |
 
